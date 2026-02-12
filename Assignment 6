@@ -1,0 +1,4 @@
+1.
+SELECT COUNT(*)
+  FROM soccer_venue
+2.
