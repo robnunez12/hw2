@@ -31,3 +31,66 @@ FROM goal_details
 WHERE goal_type = 'O'
 
 8.
+SELECT COUNT(*)
+FROM match_mast
+WHERE results='WIN' AND play_stage='G'
+
+9.
+SELECT COUNT (DISTINCT match_no)
+FROM penalty_shootout
+
+10.
+SELECT COUNT(*)
+FROM match_mast
+WHERE decided_by='P' AND play_stage='R'
+
+11.
+SELECT match_no, COUNT(*)
+FROM goal_details
+GROUP BY match_no
+ORDER BY match_no
+
+12.
+SELECT match_no, play_date, goal_score
+FROM match_mast
+WHERE stop1_sec=0
+
+13.
+SELECT COUNT(DISTINCT(match_no))
+FROM match_details
+WHERE win_lose='D' AND goal_score=0 AND play_stage='G'
+
+14.
+SELECT COUNT(goal_score)
+FROM match_details
+WHERE win_lose='W' AND decided_by<>'P' AND goal_score=1
+
+15.
+SELECT COUNT(*) as "Player Replaced"
+FROM player_in_out
+WHERE in_out='I'
+
+16.
+SELECT COUNT(*) as "Player Replaced"
+FROM player_in_out
+WHERE in_out='I' AND play_schedule='NT'
+
+17.
+SELECT COUNT(*) as "Player Replaced"
+FROM player_in_out
+WHERE in_out='I' AND play_schedule='ST'
+
+18.
+SELECT COUNT(*) as "Player Replaced"
+FROM player_in_out
+WHERE in_out='I' AND play_schedule='NT' AND play_half=1
+
+19.
+SELECT COUNT(DISTINCT match_no)
+FROM match_details
+WHERE win_lose='D' AND goal_score=0
+
+20.
+SELECT COUNT(*)
+FROM player_in_out
+WHERE play_schedule='ET' AND in_out='I'
